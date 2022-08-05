@@ -1,0 +1,16 @@
+{
+    "name": "firas/backend",
+    "autoload": {
+        "psr-4": {
+            "firas": "src/",
+            "App":"app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Firas",
+            "email": "firasbaccouch5@gmail.com"
+        }
+    ],
+    "require": {}
+}
