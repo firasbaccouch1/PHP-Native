@@ -2,9 +2,12 @@
     "name": "firas/backend",
     "autoload": {
         "psr-4": {
-            "firas": "src/",
-            "App":"app/"
-        }
+            "PHP\\": "src//",
+            "App\\":"app//" 
+        },
+        "files": [
+            "App/Helper/Helper.php"
+        ]
     },
     "authors": [
         {
@@ -12,5 +15,7 @@
             "email": "firasbaccouch5@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "symfony/var-dumper": "^6.0"
+    }
 }

@@ -6,17 +6,44 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit1417b113952a3f418d61a4a5a174f807
 {
+    public static $files = array (
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
+        '400ed3f54814e6963843c96f4e669183' => __DIR__ . '/../..' . '/App/Helper/Helper.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
-        'F' => 
+        'S' => 
         array (
-            'Firas\\Backend\\' => 14,
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Component\\VarDumper\\' => 28,
+        ),
+        'P' => 
+        array (
+            'PHP\\' => 4,
+        ),
+        'A' => 
+        array (
+            'App\\' => 4,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Firas\\Backend\\' => 
+        'Symfony\\Polyfill\\Mbstring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Component\\VarDumper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/var-dumper',
+        ),
+        'PHP\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app',
         ),
     );
 
