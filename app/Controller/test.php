@@ -7,6 +7,5 @@ class test
 
     public function index()
     {
-        echo 'firas';
     }
 }

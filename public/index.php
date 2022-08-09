@@ -2,13 +2,34 @@
 
 
 
-require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/../router/web.php';
+require_once __DIR__ . '/../src/Support/Helper.php';
+require_once base_path() . 'vendor/autoload.php';
+require_once base_path() . 'router/web.php';
 
-use PHP\Http\Request;
-use PHP\Http\Response;
-use PHP\Http\Route;
+class Fruit
+{
+    public $name;
+    public $color;
+    public function __construct($name, $color)
+    {
+        $this->name = $name;
+        $this->color = $color;
+    }
+    protected function intro()
+    {
+        echo "The fruit is {$this->name} and the color is {$this->color}.";
+    }
+}
 
+class Strawberry extends Fruit
+{
+    public function message()
+    {
+        echo "Am I a fruit or a berry? ";
+        // Call protected method from within derived class - OK
+        $this->intro();
+    }
+}
 
-$route = new Route(new Request, new Response);
-$route->resolve();
+$strawberry = new Strawberry("Strawberry", "red"); // OK. __construct() is public
+$strawberry->message(); // OK. message() is public and it calls intro() (which is protected) from within the derived class
