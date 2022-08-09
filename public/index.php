@@ -8,6 +8,7 @@ require_once base_path() . 'router/web.php';
 
 class Fruit
 {
+
     public $name;
     public $color;
     public function __construct($name, $color)
