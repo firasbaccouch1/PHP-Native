@@ -7,6 +7,6 @@ class test
 
     public function index()
     {
-        return 'this is form test controller';
+        echo  'this is form test controller';
     }
 }
