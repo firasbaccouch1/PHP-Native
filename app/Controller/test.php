@@ -7,6 +7,6 @@ class test
 
     public function index()
     {
-        echo  'this is form test controller';
+        echo   test2();
     }
 }
