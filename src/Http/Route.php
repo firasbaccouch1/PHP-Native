@@ -37,10 +37,10 @@ class Route
         $path = $this->request->path();
         $action =   self::$routes[$method][$path] ?? false;
         if (!$action) {
-            return    '404';
+            return abort404('error');
         }
         if (!array_key_exists($path, self::$routes[$method])) {
-            return '404';
+            return abort404('error');
         }
         if (is_callable($action)) {
             call_user_func_array($action, []);

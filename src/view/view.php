@@ -43,7 +43,7 @@ class View
             return    ob_get_clean();
         }
     }
-    protected static function makeError($error)
+    public static function makeError($error)
     {
         self::getViewContent($error, true);
     }

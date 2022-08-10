@@ -4,11 +4,11 @@ namespace App\Controller;
 
 use PHP\view\view;
 
-class test
+class HomeController
 {
 
     public function index()
     {
-        echo View::make('Pages.Home');
+        return view('Pages.Home');
     }
 }
