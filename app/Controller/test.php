@@ -2,11 +2,13 @@
 
 namespace App\Controller;
 
+use PHP\Http\view\view;
+
 class test
 {
 
     public function index()
     {
-        echo   test2();
+     return View::make
     }
 }

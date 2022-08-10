@@ -1,8 +1,8 @@
 <?php
 
-namespace PHP\Http\view;
+namespace PHP\Http\View;
 
-class view
+class View
 {
 
 
