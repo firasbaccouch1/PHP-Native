@@ -6,13 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .error {
+            width: 100%;
+            height: 100vh;
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .text {
+            font-size: 48px;
+            color: burlywood;
+
+        }
+    </style>
 </head>
 
-<body>
-    <h1 class="text-3xl font-bold underline text-clifford">
-        This is error page
-    </h1>
+<body style="margin:0 ;">
+
+    <div class='error'>
+        <h1 class="text">Page Not Found</h1>
+    </div>
+
 </body>
 
 </html>
