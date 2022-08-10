@@ -15,6 +15,6 @@ if (!function_exists('base_path')) {
 if (!function_exists('view_path')) {
     function view_path()
     {
-        return base_path() . 'view/';
+        return base_path() . 'View/';
     }
 }

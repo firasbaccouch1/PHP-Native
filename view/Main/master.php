@@ -10,11 +10,11 @@
 </head>
 
 <body>
-    <h1 class="text-3xl font-bold underline">
+    <h1 class="text-3xl font-bold ">
         This is Master view
     </h1>
 
-    <div class='bg-black'>
+    <div class='bg-yellow-200'>
         {{ content }}
     </div>
 </body>

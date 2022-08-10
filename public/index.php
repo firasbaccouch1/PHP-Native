@@ -1,6 +1,5 @@
 <?php
 
-use App\Controller\test;
 use PHP\Http\Request;
 use PHP\Http\Response;
 
