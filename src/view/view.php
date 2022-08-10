@@ -11,7 +11,7 @@ class View
         $BaseContent =  self::getBaseContent();
         $ViewContent = self::getViewContent($view, params: $params);
 
-        return  str_replace('{{ content }}', $ViewContent, $BaseContent);
+        echo  str_replace('{{ content }}', $ViewContent, $BaseContent);
     }
 
     protected static function getBaseContent()
@@ -45,6 +45,6 @@ class View
     }
     public static function makeError($error)
     {
-        self::getViewContent($error, true);
+        echo   self::getViewContent($error, true);
     }
 }

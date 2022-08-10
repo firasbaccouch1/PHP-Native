@@ -24,13 +24,13 @@ if (!function_exists('view_path')) {
 if (!function_exists('view')) {
     function view($view, $params = [])
     {
-        echo View::make($view, $params);
+        return View::make($view, $params);
     }
 }
 
 if (!function_exists('abort404')) {
     function abort404($view)
     {
-        echo View::makeError($view);
+        return View::makeError($view);
     }
 }

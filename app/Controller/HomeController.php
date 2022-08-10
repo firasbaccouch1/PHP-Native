@@ -9,6 +9,6 @@ class HomeController
 
     public function index()
     {
-        return view('Pages.Home');
+        return View::make('Pages.Home');
     }
 }
