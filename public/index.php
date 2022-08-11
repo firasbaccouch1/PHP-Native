@@ -16,9 +16,10 @@ $env->load();
 
 app()->run();
 $array = [
-    'username',
+    'username' => [
+        'sql' => 'firas',
+    ],
     'email'
 ];
-var_dump(Arr::last($array, function ($item, $key) {
-    var_dump($item . $key);
-}));
+Arr::forget($array, 'username.sql');
+var_dump($array);

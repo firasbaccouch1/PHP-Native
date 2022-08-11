@@ -3,6 +3,7 @@
 namespace PHP\Support;
 
 use ArrayAccess;
+use PDO;
 
 class Arr
 {
@@ -77,7 +78,32 @@ class Arr
         return value($default);
     }
 
-    public static function forget($array, $value)
+    public static function forget(&$array, $key)
     {
+        $original = &$array;
+        $keys = (array) $key;
+        if (count($keys) === 0) {
+            return false;
+        }
+
+        foreach ($keys as $key) {
+            if (static::exists($array, $key)) {
+                unset($array[$key]);
+
+                continue;
+            }
+            $parts = explode('.', $key);
+            $array = &$original;
+            while (count($parts) > 1) {
+                $part = array_shift($parts);
+
+                if (isset($array[$part]) && is_array($array[$part])) {
+                    $array = &$array[$part];
+                } else {
+                    continue 2;
+                }
+            }
+            unset($array[array_shift($parts)]);
+        }
     }
 }
