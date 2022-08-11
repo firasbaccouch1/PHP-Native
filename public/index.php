@@ -2,6 +2,7 @@
 
 use Dotenv\Dotenv;
 use PHP\Support\Arr;
+use Symfony\Component\VarDumper\VarDumper;
 
 require_once __DIR__ . '/../src/Support/Helper.php';
 require_once base_path() . 'vendor/autoload.php';
@@ -15,11 +16,9 @@ $env->load();
 
 app()->run();
 $array = [
-    'username' => [
-        'firas' => [
-            'fares' => 'sql'
-        ]
-    ],
-    'email' => 'test@gmail.com'
+    'username',
+    'email'
 ];
-var_dump(Arr::has($array, 'username.firas.fares'));
+var_dump(Arr::last($array, function ($item, $key) {
+    var_dump($item . $key);
+}));

@@ -35,6 +35,7 @@ class Arr
         foreach ($keys as $key) {
             $subarray = $array;
             if (static::exists($array, $key)) {
+
                 continue;
             }
             foreach (explode('.', $key) as $segment) {
@@ -46,5 +47,37 @@ class Arr
             }
         }
         return true;
+    }
+    public static function last($array, callable $callback = null, $default = null)
+    {
+
+        if (is_null($callback)) {
+
+            return empty($array) ? value($default) : end($array);
+        }
+
+        return static::first(array_reverse($array, true), $callback, $default);
+    }
+    public static function first($array, callable $callback = null, $default = null)
+    {
+
+        if (is_null($callback)) {
+            if (empty($array)) {
+                return value($default);
+            }
+            foreach ($array as $item) {
+                return $item;
+            }
+        }
+        foreach ($array as $key => $value) {
+            if (call_user_func($callback, $value, $key)) {
+                return $value;
+            }
+        }
+        return value($default);
+    }
+
+    public static function forget($array, $value)
+    {
     }
 }

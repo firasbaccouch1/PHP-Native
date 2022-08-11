@@ -56,3 +56,9 @@ if (!function_exists('app')) {
         return $instance;
     }
 }
+if (!function_exists('value')) {
+    function value($value)
+    {
+        return ($value instanceof Closure) ? $value() : $value;
+    }
+}
