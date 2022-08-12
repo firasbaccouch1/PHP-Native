@@ -18,10 +18,9 @@ app()->run();
 
 
 $array = [
-    'username' => [
-        'sql' => 'firas',
-    ],
-    'email'
+    'username' => ['firas' => ['Sql' => 'yes im here']]
 ];
-Arr::forget($array, 'username.sql');
+
+
+Arr::set($array, 'username.firas.Sql', 'firas here');
 var_dump($array);
