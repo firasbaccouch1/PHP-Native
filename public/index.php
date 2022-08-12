@@ -1,7 +1,7 @@
 <?php
 
 use Dotenv\Dotenv;
-
+use PHP\Support\Hash;
 
 require_once __DIR__ . '/../src/Support/Helper.php';
 require_once base_path() . 'vendor/autoload.php';
@@ -14,3 +14,5 @@ $env->load();
 
 
 app()->run();
+
+var_dump(Hash::make('firas'));
