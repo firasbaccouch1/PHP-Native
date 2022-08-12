@@ -62,3 +62,24 @@ if (!function_exists('value')) {
         return ($value instanceof Closure) ? $value() : $value;
     }
 }
+if (!function_exists('config_path')) {
+    function config_path()
+    {
+        return base_path() . 'config/';
+    }
+}
+
+if (!function_exists('config')) {
+    function config($key = null, $default = null)
+    {
+        if (is_null($key)) {
+            return app()->config;
+        }
+
+        if (is_array($key)) {
+            return app()->config->set($key);
+        }
+
+        return app()->config->get($key, $default);
+    }
+}

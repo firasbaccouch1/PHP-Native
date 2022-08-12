@@ -1,8 +1,7 @@
 <?php
 
 use Dotenv\Dotenv;
-use PHP\Support\Arr;
-use Symfony\Component\VarDumper\VarDumper;
+
 
 require_once __DIR__ . '/../src/Support/Helper.php';
 require_once base_path() . 'vendor/autoload.php';
@@ -15,12 +14,3 @@ $env->load();
 
 
 app()->run();
-
-
-$array = [
-    'username' => ['firas' => ['Sql' => 'yes im here']]
-];
-
-
-Arr::set($array, 'username.firas.Sql', 'firas here');
-var_dump($array);
