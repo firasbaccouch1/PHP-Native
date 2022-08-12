@@ -106,4 +106,7 @@ class Arr
             unset($array[array_shift($parts)]);
         }
     }
+    public static function except()
+    {
+    }
 }
