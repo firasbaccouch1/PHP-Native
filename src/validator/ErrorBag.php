@@ -6,6 +6,7 @@ class ErrorBag
 {
 
  //firas
+ //fares
 
     protected array $errors = [];
 
