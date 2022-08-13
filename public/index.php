@@ -17,14 +17,14 @@ $env->load();
 app()->run();
 
 $validator = new validate;
-var_dump($validator->apply([
+$validator->setRules([
     'username' => 'required|alpha',
     'email'    => 'email|required',
-]));
-
-$validator->make([
-    'username' => 'ahmed',
-    'email' => 'firas@gmailcom'
 ]);
 
-var_dump($validator->errors());
+var_dump($validator->make([
+    'username' => 'ahmed',
+    'email' => 'firas@gmailcom'
+]));
+
+

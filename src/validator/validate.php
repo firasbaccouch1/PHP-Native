@@ -3,6 +3,7 @@
 namespace PHP\validator;
 
 use PHP\Http\Request;
+use PHP\Support\Arr;
 use PHP\validator\Rules\Email;
 
 class validate
@@ -10,24 +11,34 @@ class validate
 
     protected $filed = [];
     protected $errors= [];
-    protected static   $validateClass = [
-        'required' =>  Request::class,
-        'email' =>  Email::class,
-    ];
+    protected $rules = [];
+    protected $aliases = [];
 
-    public function apply(array $data)
+
+    public function apply(array $filed)
     {
-       return $data;
+        $this->filed = $filed;
+        
     }
 
     public function errors()
     {
-        return;
+        
     }
-    public function setRules()
+    public function setRules(array $data)
     {
+        $this->rules = $data;
     }
-    public function make(){
+    public function make($data){
+       if(!is_array($data)){
+        return null;
+       }
+       foreach ($data as $key => $value) {
+            
+       }
+    }
+    public function setAliases($aliases){
+        $this->aliases = $aliases;
+    }
 
-    }
 }
