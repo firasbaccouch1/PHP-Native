@@ -5,7 +5,7 @@ namespace PHP\validator;
 class ErrorBag
 {
 
- 
+ //firas
 
     protected array $errors = [];
 
