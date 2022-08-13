@@ -2,7 +2,7 @@
 
 use Dotenv\Dotenv;
 use PHP\Support\Hash;
-use PHP\validator\validate;
+use PHP\validator\Validator;
 
 require_once __DIR__ . '/../src/Support/Helper.php';
 require_once base_path() . 'vendor/autoload.php';
@@ -16,15 +16,20 @@ $env->load();
 
 app()->run();
 
-$validator = new validate;
+$validator = new Validator();
 $validator->setRules([
-    'username' => 'required|alpha',
-    'email'    => 'email|required',
+    'name' => 'required',
+    'email' => 'required|email',
 ]);
 
-var_dump($validator->make([
-    'username' => 'ahmed',
-    'email' => 'firas@gmailcom'
-]));
+//$validator->setAliases([
+ //   'password_confirmation' => 'Password confirmation'
+//]);
+$array =[ 
+    'name' => 'firas',
+    'email' => 'firas@gmail.com'
+];
+
+var_dump($validator->make($array)) ;
 
 

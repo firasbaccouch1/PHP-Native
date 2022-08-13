@@ -2,6 +2,10 @@
 
 namespace PHP\validator;
 
-class messages
+class Messages
 {
+
+    public static function generate($rule,$filed){
+        return str_replace('%s',$filed,$rule);
+    } 
 }
