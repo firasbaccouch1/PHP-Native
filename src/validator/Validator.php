@@ -2,9 +2,7 @@
 
 namespace PHP\validator;
 
-use PHP\Http\Request;
-use PHP\Support\Arr;
-use PHP\validator\Rules\Email;
+use PHP\validator\Rules\Required;
 
 class Validator
 {
@@ -16,7 +14,7 @@ class Validator
     protected array $rules = [];
 
     protected array $errors =[];
-    protected $class =[
+    protected static $class =[
         'required' => Required::class,
     ];
     protected ErrorBag $errorBag;
@@ -54,7 +52,12 @@ class Validator
     public function validate()
     {
         foreach ($this->rules as $filed => $rules) {
-            return $rules;
+       
+          $firas =  new  static::$class['required'];
+          return $firas->apply($filed,$this->data[$filed]);
+            if($this->class['required']){
+                return 'yes';
+            }
         }
     }
 
