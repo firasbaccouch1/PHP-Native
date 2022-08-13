@@ -17,10 +17,10 @@ $env->load();
 app()->run();
 
 $validator = new validate;
-$validator->apply([
+var_dump($validator->apply([
     'username' => 'required|alpha',
     'email'    => 'email|required',
-]);
+]));
 
 $validator->make([
     'username' => 'ahmed',

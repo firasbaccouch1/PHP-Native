@@ -2,15 +2,22 @@
 
 namespace PHP\validator;
 
+use PHP\Http\Request;
+use PHP\validator\Rules\Email;
+
 class validate
 {
 
-    protected $filed;
-
+    protected $filed = [];
+    protected $errors= [];
+    protected static   $validateClass = [
+        'required' =>  Request::class,
+        'email' =>  Email::class,
+    ];
 
     public function apply(array $data)
     {
-        var_dump($data);
+       return $data;
     }
 
     public function errors()
@@ -19,5 +26,8 @@ class validate
     }
     public function setRules()
     {
+    }
+    public function make(){
+
     }
 }
