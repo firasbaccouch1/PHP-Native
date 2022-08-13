@@ -2,6 +2,7 @@
 
 use Dotenv\Dotenv;
 use PHP\Support\Hash;
+use PHP\validator\ErrorBag;
 use PHP\validator\Validator;
 
 require_once __DIR__ . '/../src/Support/Helper.php';
@@ -15,7 +16,12 @@ $env->load();
 
 
 app()->run();
+$error = new ErrorBag;
+$error->add('firas','zok omm el php');
+var_dump($error->errors['firas'][0]);
 
+
+/*
 $validator = new Validator();
 $validator->setRules([
     'name' => 'required',
@@ -30,6 +36,8 @@ $array =[
     'email' => 'firas@gmail.com'
 ];
 
-var_dump($validator->make($array)) ;
+echo $validator->make($array) ;
+*/
+
 
 

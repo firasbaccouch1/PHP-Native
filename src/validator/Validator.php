@@ -52,9 +52,9 @@ class Validator
     public function validate()
     {
         foreach ($this->rules as $filed => $rules) {
-       
-          $firas =  new  static::$class['required'];
-          return $firas->apply($filed,$this->data[$filed]);
+
+  return   $firas =  new  static::$class['required']($filed,$this->data[$filed]);
+            echo $firas;
             if($this->class['required']){
                 return 'yes';
             }
