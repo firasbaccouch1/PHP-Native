@@ -13,8 +13,8 @@ class Validator
 
     protected array $rules = [];
 
-    protected array $errors =[];
-    protected static $class =[
+    protected array $errors = [];
+    protected static $class = [
         'required' => Required::class,
     ];
     protected ErrorBag $errorBag;
@@ -22,27 +22,27 @@ class Validator
 
     public function errors()
     {
-        
     }
 
 
     public function setRules(array $data)
     {
         $this->rules = $data;
-    
     }
 
 
 
-    public function make($data){
+    public function make($data)
+    {
         $this->data = $data;
         $this->errorBag = new ErrorBag();
-    return    $this->validate();
+        return    $this->validate();
     }
 
 
 
-    public function setAliases($aliases){
+    public function setAliases($aliases)
+    {
         $this->aliases = $aliases;
     }
 
@@ -53,12 +53,11 @@ class Validator
     {
         foreach ($this->rules as $filed => $rules) {
 
-  return   $firas =  new  static::$class['required']($filed,$this->data[$filed]);
+            return   $firas =  new  static::$class['required']($filed, $this->data[$filed]);
             echo $firas;
-            if($this->class['required']){
+            if ($this->class['required']) {
                 return 'yes';
             }
         }
     }
-
 }
