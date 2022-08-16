@@ -16,28 +16,26 @@ $env->load();
 
 
 app()->run();
-$error = new ErrorBag;
-$error->add('firas','zok omm el php');
-var_dump($error->errors['firas'][0]);
+//firas
+//commit
 
 
-/*
+
+
 $validator = new Validator();
 $validator->setRules([
-    'name' => 'required',
     'email' => 'required|email',
+    'name' => 'required',
+
 ]);
 
 //$validator->setAliases([
- //   'password_confirmation' => 'Password confirmation'
+//   'password_confirmation' => 'Password confirmation'
 //]);
-$array =[ 
+$array = [
     'name' => 'firas',
     'email' => 'firas@gmail.com'
 ];
 
-echo $validator->make($array) ;
-*/
-
-
-
+var_dump($validator->make($array));
+//var_dump($validator->errors());
